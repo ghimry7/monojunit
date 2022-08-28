@@ -1,0 +1,34 @@
+package com.monocept.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class GameTest {
+
+	Player[] players=new Player[2];;
+	Board board;
+	ResultAnalyzer analyze;
+	ResultType result;
+	MarkType mark;
+	Game game;
+	
+	@BeforeEach
+	void createObj() {
+		
+		board=new Board();
+		analyze=new ResultAnalyzer(board);
+		game=new Game(players,board,analyze);
+		
+	}
+	
+	@Test
+	void testCreatePlayers() {
+		players[0].setName("Mono");
+		players[]
+		assertEquals("Mono",game.getCurrentPlayer());
+	}
+	
+
+}

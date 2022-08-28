@@ -1,0 +1,14 @@
+package com.monocept.model;
+
+import java.awt.FlowLayout;
+
+import javax.swing.*;
+
+public class MouseEventDemo extends JFrame {
+	public MouseEventDemo() {
+		setLayout(new FlowLayout());
+		setVisible(true);
+		setSize(400, 400);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+}

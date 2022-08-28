@@ -1,0 +1,41 @@
+package com.monocept.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class GameTest {
+
+	Player[] players=new Player[2];;
+	Board board;
+	ResultAnalyzer analyze;
+	ResultType result;
+	MarkType mark;
+	Game game;
+	
+	@BeforeEach
+	void createObj() {
+		players[0]=new Player("Mono");
+		players[1]=new Player("Java");
+		board=new Board();
+		analyze=new ResultAnalyzer(board);
+		game=new Game(players,board,analyze);
+		
+	}
+	
+	@Test
+	void testCreatePlayers() {
+		assertEquals("Mono",game.getCurrentPlayer().getName());
+		assertEquals(mark.X,game.getCurrentPlayer().getMark());
+	}
+	
+	@Test
+	void testSwitchPlayers() {
+		game.switchCurrentPlayer();
+		assertEquals("Java",game.getCurrentPlayer().getName());
+		assertEquals(mark.O,game.getCurrentPlayer().getMark());
+	}
+	
+
+}

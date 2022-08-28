@@ -1,0 +1,38 @@
+package com.monocept.model;
+
+import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+
+public class Addition extends JFrame implements ActionListener{
+	public Addition() {
+		Cal();
+		setLayout(new FlowLayout());
+		setVisible(true);
+		setSize(400, 400);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	public void Cal() {
+		JTextField t1=new JTextField(20);
+		JTextField t2=new JTextField(20);
+		JButton b1=new JButton("OK");
+		JLabel l1=new JLabel("Result");
+		add(t1);
+		add(t2);
+		add(b1);
+		add(l1);
+		b1.addActionListener(this);
+		
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		Cal cal=new Cal();
+		
+	}
+}

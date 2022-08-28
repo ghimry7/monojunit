@@ -1,0 +1,29 @@
+package com.monocept.model;
+
+import org.junit.jupiter.api.BeforeEach;
+
+class GameTest {
+
+	Player[] players;
+	Board board;
+	ResultAnalyzer analyze;
+	ResultType result;
+	MarkType mark;
+	Game game;
+	
+	@BeforeEach
+	void createObj() {
+		players=new Player[2];
+		board=new Board();
+		analyze=new ResultAnalyzer(board);
+		game=new Game(players,board,analyze);
+		
+	}
+	
+	@Test
+	void testCreatePlayers() {
+		
+	}
+	
+
+}

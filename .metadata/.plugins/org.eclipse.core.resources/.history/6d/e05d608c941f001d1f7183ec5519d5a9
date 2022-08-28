@@ -1,0 +1,21 @@
+package com.monocept.model;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class CellTest {
+	
+	Cell cell;
+	MarkType mark;
+	
+	@BeforeEach
+	void createObj() {
+		cell=new Cell(mark.Empty);
+	}
+
+	@Test
+	void testCreatedCellIsEmpty() {
+		
+	}
+
+}

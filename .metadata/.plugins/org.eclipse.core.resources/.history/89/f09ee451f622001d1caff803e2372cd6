@@ -1,0 +1,9 @@
+package com.monocept.guitest;
+
+public class TicTacToeUITest {
+
+	@SuppressWarnings("unused")
+	public static void main(String[] args) {
+		TicTacToeUserNameUITest ticObj=new TicTacToeUserNameUITest();
+	}
+}

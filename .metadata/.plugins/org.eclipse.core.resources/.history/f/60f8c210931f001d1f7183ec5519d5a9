@@ -1,0 +1,25 @@
+package com.monocept.model;
+
+public class Cell {
+	private MarkType mark;
+	
+	public Cell(MarkType mark) {
+		this.mark=mark;
+	}
+
+	public MarkType getMark() {
+		return mark;
+	}
+
+	public void setMark(MarkType mark) {
+		this.mark = mark;
+	}
+	
+	public boolean isCellEmpty() {
+		if(mark==mark.Empty) {
+			return true;
+		}
+		else
+			return false;
+	}
+}

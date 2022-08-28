@@ -1,0 +1,19 @@
+package com.monocept.model;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class ProductTest {
+
+	
+	@BeforeEach
+	void createObj() {
+		
+	}
+	@Test
+	void testPriceAfterDiscount() {
+		
+	}
+	
+
+}

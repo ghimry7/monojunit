@@ -1,0 +1,10 @@
+package com.monocept.model;
+
+import javax.swing.JFrame;
+
+public class FirstGUI extends JFrame {
+	FirstGUI(){
+		setVisible(true);
+		setSize(400,400);
+	}
+}

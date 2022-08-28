@@ -1,0 +1,45 @@
+package com.monocept.guitest;
+
+import static org.junit.jupiter.api.Assertions.fail;
+
+import java.util.Random;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+import com.monocept.model.Board;
+import com.monocept.model.Game;
+import com.monocept.model.Player;
+import com.monocept.model.ResultAnalyzer;
+
+class GameUITest {
+
+	JFrame frame = new JFrame();// Frame object
+	JPanel t_panel = new JPanel();// Panel for text
+	JPanel bt_panel = new JPanel();// Panel for buttons
+	JLabel textfield = new JLabel();// Label object to display text
+	JButton[] bton = new JButton[9];// creating an array of button's because in tic tac toe game there are 9
+									// position's
+	int chance_flag = 0;
+	Random random = new Random();
+	boolean pl1_chance;
+	Board board = new Board();
+	ResultAnalyzer analyzer = new ResultAnalyzer(board);
+	Player[] players = new Player[2];
+	Game game;
+	
+	@BeforeEach
+	void createObj() {
+		
+	}
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}

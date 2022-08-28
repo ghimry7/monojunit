@@ -1,0 +1,15 @@
+package com.monocept.model;
+
+import javax.swing.*;
+
+
+public class FirstGUI extends JFrame {
+	public FirstGUI(){
+		setLayout(new FlowLayout());//FlowLayout GridLayout
+		JLabel l=new JLabel("Hello World");
+		add(l);
+		
+		setVisible(true);
+		setSize(400,400);
+	}
+}

@@ -1,0 +1,21 @@
+package com.monocept.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class CellTest {
+	
+	Cell cell;
+	
+	@BeforeEach
+	void createObj() {
+		cell=new Cell();
+	}
+
+	@Test
+	void testCreatedCellIsEmpty() {
+		
+	}
+
+}

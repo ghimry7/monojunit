@@ -1,0 +1,125 @@
+package com.monocept.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class ResultAnalyzerTest {
+
+	ResultAnalyzer analyze;
+	Board board;
+	ResultType result;
+	MarkType mark;
+
+	@BeforeEach
+	void createObj() {
+		board = new Board();
+		analyze = new ResultAnalyzer(board);
+
+	}
+
+	@Test
+	void checkWinHorizontalTest() {
+		board.setCellMark(0, mark.X);
+		board.setCellMark(1, mark.O);
+		board.setCellMark(2, mark.Empty);
+		board.setCellMark(3, mark.O);
+		board.setCellMark(4, mark.Empty);
+		board.setCellMark(5, mark.O);
+		board.setCellMark(6, mark.X);
+		board.setCellMark(7, mark.X);
+		board.setCellMark(8, mark.X);
+
+		assertEquals(analyze.analyzeResult(), result.WIN);
+
+	}
+	
+	@Test
+	void checkDrawTest() {
+		board.setCellMark(0, mark.X);
+		board.setCellMark(1, mark.X);
+		board.setCellMark(2, mark.O);
+		board.setCellMark(3, mark.O);
+		board.setCellMark(4, mark.O);
+		board.setCellMark(5, mark.X);
+		board.setCellMark(6, mark.X);
+		board.setCellMark(7, mark.X);
+		board.setCellMark(8, mark.O);
+
+		assertEquals(analyze.analyzeResult(), result.DRAW);
+	}
+	
+	@Test
+	void checkProgressTest() {
+		board.setCellMark(0, mark.X);
+		board.setCellMark(1, mark.Empty);
+		board.setCellMark(2, mark.O);
+		board.setCellMark(3, mark.Empty);
+		board.setCellMark(4, mark.Empty);
+		board.setCellMark(5, mark.Empty);
+		board.setCellMark(6, mark.X);
+		board.setCellMark(7, mark.Empty);
+		board.setCellMark(8, mark.Empty);
+
+		assertEquals(analyze.analyzeResult(), result.PROGRESS);
+	}
+
+//	@Test
+//	void checkWinVerticalTest() {
+//		
+//		board.setCellMark(0, mark.X);
+//		board.setCellMark(1, mark.O);
+//		board.setCellMark(2, mark.O);
+//		board.setCellMark(3, mark.X);
+//		board.setCellMark(4, mark.Empty);
+//		board.setCellMark(5, mark.Empty);
+//		board.setCellMark(6, mark.X);
+//		board.setCellMark(7, mark.Empty);
+//		board.setCellMark(8, mark.Empty);
+//		
+//
+//		assertEquals(analyze.analyzeResult(), result.WIN);
+//
+//	}
+
+//	@Test
+//	void checkWinDiagonalTest() {
+//
+//		
+////		board.setCellMark(0, mark.X);
+////		board.setCellMark(1, mark.O);
+////		board.setCellMark(2, mark.Empty);
+////		board.setCellMark(3, mark.O);
+////		board.setCellMark(4, mark.X);
+////		board.setCellMark(5, mark.Empty);
+////		board.setCellMark(6, mark.Empty);
+////		board.setCellMark(7, mark.Empty);
+////		board.setCellMark(8, mark.X);
+//		
+//		board.setCellMark(0, mark.X);
+//		board.setCellMark(1, mark.Empty);
+//		board.setCellMark(2, mark.O);
+//		board.setCellMark(3, mark.Empty);
+//		board.setCellMark(4, mark.X);
+//		board.setCellMark(5, mark.O);
+//		board.setCellMark(6, mark.O);
+//		board.setCellMark(7, mark.Empty);
+//		board.setCellMark(8, mark.X);
+//		
+////		board.setCellMark(0, mark.X);
+////		board.setCellMark(1, mark.X);
+////		board.setCellMark(2, mark.O);
+////		board.setCellMark(3, mark.Empty);
+////		board.setCellMark(4, mark.O);
+////		board.setCellMark(5, mark.Empty);
+////		board.setCellMark(6, mark.O);
+////		board.setCellMark(7, mark.X);
+////		board.setCellMark(8, mark.Empty);
+//
+//
+//		assertEquals(analyze.analyzeResult(), result.WIN);
+//
+//	}
+
+}

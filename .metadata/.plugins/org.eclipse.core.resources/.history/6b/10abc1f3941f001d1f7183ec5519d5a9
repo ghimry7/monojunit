@@ -1,0 +1,38 @@
+package com.monocept.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class CellTest {
+	
+	Cell cell;
+	MarkType mark;
+	
+	@BeforeEach
+	void createObj() {
+		cell=new Cell(mark.Empty);
+	}
+
+	@Test
+	void testCreatedCellIsEmpty() {
+		assertEquals(cell.getMark(),mark.Empty);
+	}
+	
+	@Test
+	void testSetMark_checkIfcanMarkX() {
+		
+	}
+	
+	@Test
+	void testSetMark_checkIfcanMarkO() {
+		
+	}
+	
+	@Test
+	void testSetMark_throwCellAlreadyMarkedExceptionWhenMarkedTwice() {
+		
+	}
+
+}

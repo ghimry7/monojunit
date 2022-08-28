@@ -1,0 +1,79 @@
+package com.monocept.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class ResultAnalyzerTest {
+
+	ResultAnalyzer analyze;
+	Board board;
+	ResultType result;
+
+	@BeforeEach
+	void createObj() {
+		board = new Board();
+		analyze = new ResultAnalyzer(board);
+
+	}
+
+	@Test
+	void checkWinHorizontalTest() {
+		board.cell[0].setMark(board.mark.X);
+		board.cell[1].setMark(board.mark.O);
+		board.cell[2].setMark(board.mark.Empty);
+		board.cell[3].setMark(board.mark.O);
+		board.cell[4].setMark(board.mark.Empty);
+		board.cell[5].setMark(board.mark.O);
+		board.cell[6].setMark(board.mark.X);
+		board.cell[7].setMark(board.mark.X);
+		board.cell[8].setMark(board.mark.X);
+
+		assertEquals(analyze.analyzeResult(), result.WIN);
+		System.out.println("Horizontal");
+	}
+
+	@Test
+	void checkWinVerticalTest() {
+		board.cell[0].setMark(board.mark.X);
+		board.cell[1].setMark(board.mark.Empty);
+		board.cell[2].setMark(board.mark.O);
+		board.cell[3].setMark(board.mark.Empty);
+		board.cell[4].setMark(board.mark.X);
+		board.cell[5].setMark(board.mark.O);
+		board.cell[6].setMark(board.mark.X);
+		board.cell[7].setMark(board.mark.Empty);
+		board.cell[8].setMark(board.mark.O);
+
+		assertEquals(analyze.analyzeResult(), result.WIN);
+		System.out.println("Vertical");
+	}
+	
+	@Test
+	void checkWinDiagonalTest() {
+//		board.cell[0].setMark(board.mark.X);
+//		board.cell[1].setMark(board.mark.O);
+//		board.cell[2].setMark(board.mark.Empty);
+//		board.cell[3].setMark(board.mark.O);
+//		board.cell[4].setMark(board.mark.X);
+//		board.cell[5].setMark(board.mark.Empty);
+//		board.cell[6].setMark(board.mark.Empty);
+//		board.cell[7].setMark(board.mark.Empty);
+//		board.cell[8].setMark(board.mark.X);
+		
+		board.cell[0].setMark(board.mark.X);
+		board.cell[1].setMark(board.mark.X);
+		board.cell[2].setMark(board.mark.O);
+		board.cell[3].setMark(board.mark.Empty);
+		board.cell[4].setMark(board.mark.O);
+		board.cell[5].setMark(board.mark.Empty);
+		board.cell[6].setMark(board.mark.O);
+		board.cell[7].setMark(board.mark.X);
+		board.cell[8].setMark(board.mark.Empty);
+
+		assertEquals(analyze.analyzeResult(), result.WIN);
+		System.out.println("Diagonal");
+	}
+
+}

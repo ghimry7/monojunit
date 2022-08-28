@@ -1,0 +1,22 @@
+package com.monocept.model;
+
+import org.junit.jupiter.api.BeforeEach;
+
+class LineItemTest {
+
+	Product product;
+	LineItem item;
+	
+	@BeforeEach
+	void createObj() {
+		product=new Product(1,"Banana",50.0,0.2);
+		item=new Item(11,5,product);
+	}
+	
+	
+	
+	@Test
+	void testCalLineItemPrice() {
+		
+	}
+}

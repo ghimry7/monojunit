@@ -1,0 +1,78 @@
+package com.monocept.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class GameTest {
+
+	Player[] players=new Player[2];;
+	Board board;
+	ResultAnalyzer analyze;
+	ResultType result;
+	MarkType mark;
+	Game game;
+	
+	@BeforeEach
+	void createObj() {
+		players[0]=new Player("Mono");
+		players[1]=new Player("Java");
+		board=new Board();
+		analyze=new ResultAnalyzer(board);
+		game=new Game(players,board,analyze);
+		
+	}
+	
+	@Test
+	void testCurrentPlayers() {
+		assertEquals("Mono",game.getCurrentPlayer().getName());
+		assertEquals(mark.X,game.getCurrentPlayer().getMark());
+	}
+	
+	@Test
+	void testSwitchPlayers() {
+		game.switchCurrentPlayer();
+		assertEquals("Java",game.getCurrentPlayer().getName());
+		assertEquals(mark.O,game.getCurrentPlayer().getMark());
+	}
+	
+	@Test
+	void testPlay() {
+		game.play(1);
+		assertEquals(mark.X,board.cell[1].getMark());
+		game.switchCurrentPlayer();
+		game.play(8);
+		assertEquals(mark.O,board.cell[8].getMark());
+	}
+	
+	@Test
+	void testThrowInvalidLocException() {
+		assertThrows(InavlidCellLocationException.class, () -> game.play(9));
+	}
+	
+	@Test
+	void testThrowCellAlreayMarkedException() {
+		game.play(1);
+		game.switchCurrentPlayer();
+		assertThrows(CellAlreadyMarkedException.class, () -> game.play(1));
+	}
+	
+	@Test
+	void testWinner() {
+		game.play(1);
+		game.switchCurrentPlayer();
+		game.play(5);
+		game.switchCurrentPlayer();
+		game.play(7);
+		game.switchCurrentPlayer();
+		game.play(4);
+		game.switchCurrentPlayer();
+		game.play(2);
+		game.switchCurrentPlayer();
+		game.play(3);
+		assertEquals(analyze.analyzeResult(), result.WIN);
+	}
+
+}

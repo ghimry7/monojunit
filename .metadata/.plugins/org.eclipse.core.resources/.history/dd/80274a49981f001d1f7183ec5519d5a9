@@ -1,0 +1,39 @@
+package com.monocept.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class BoardTest {
+	Board board;
+	
+	@BeforeEach
+	void createObj() {
+		board=new Board();
+	}
+
+	@Test
+	void testCreatedBoard_allNineCellsAreEmpty() {
+		
+	}
+	@Test
+	void testSetCellMark_ableToMarkAtSpecificLoaction() {
+		
+	}
+	
+	@Test
+	void testSetCellMark_throwsInvalidLoactionCellException() {
+		
+	}
+	
+	@Test
+	void testIsBoardFull_checkTrueIfBoardIsFull() {
+		
+	}
+	
+	@Test
+	void testSetCellMark_throwsCellAlreadyMarkedExcpetionIfCellMarkedTwice() {
+		
+	}
+
+}

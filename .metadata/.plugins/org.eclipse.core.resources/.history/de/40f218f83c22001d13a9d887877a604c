@@ -1,0 +1,36 @@
+package com.monocept.model;
+
+import java.awt.FlowLayout;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JFrame;
+import javax.swing.JRadioButton;
+
+public class JRadioClass extends JFrame {
+	
+	public JRadioClass() {
+		JRadioMethod();
+		setLayout(new FlowLayout());
+		setVisible(true);
+		setSize(400, 400);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	public void JRadioMethod() {
+		
+		JRadioButton r1=new JRadioButton("Male");
+		JRadioButton r2=new JRadioButton("Female");
+		
+		
+		add(r1);
+		add(r2);
+		ButtonGroup bg=new ButtonGroup();
+		bg.add(r1);
+		bg.add(r2);
+		
+		
+		
+		
+		
+	}
+}

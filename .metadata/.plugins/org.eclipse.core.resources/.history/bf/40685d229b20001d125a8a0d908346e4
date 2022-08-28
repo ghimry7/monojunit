@@ -1,0 +1,25 @@
+package com.monocept.model;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class OrderTest {
+	
+	Product product;
+	LineItem item;
+	Order order;
+	@BeforeEach
+	void createObj() {
+		product = new Product(1, "Banana", 50.0, 0.2);
+		item = new LineItem(11, 5, product);
+		order.addLineItem(item);
+	}
+
+	@Test
+	void testCalLineItemPrice() {
+		assertEquals(200, item.calculateLineItemCost());
+	}
+
+}

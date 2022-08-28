@@ -1,0 +1,12 @@
+package com.monocept.model;
+
+public class Board {
+	MarkType mark;
+	Cell[] cell=new Cell[9];
+	
+	public void Borad() {
+		for(int i;i<cell.length;i++) {
+			cell[i]=mark.Empty;
+		}
+	}
+}

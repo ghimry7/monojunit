@@ -1,0 +1,82 @@
+package com.monocept.model;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+class ResultAnalyzerTest {
+
+	ResultAnalyzer analyze;
+	Board board;
+	ResultType result;
+	MarkType mark;
+
+	@BeforeEach
+	void createObj() {
+		board = new Board();
+		analyze = new ResultAnalyzer(board);
+
+	}
+
+	@Test
+	void checkWinHorizontalTest() {
+		board.setCellMark(0, mark.X);
+		board.setCellMark(1, mark.O);
+		board.setCellMark(2, mark.Empty);
+		board.setCellMark(3, mark.O);
+		board.setCellMark(4, mark.Empty);
+		board.setCellMark(5, mark.O);
+		board.setCellMark(6, mark.X);
+		board.setCellMark(7, mark.X);
+		board.setCellMark(8, mark.X);
+
+		assertEquals(analyze.analyzeResult(), result.WIN);
+
+	}
+
+	@Test
+	void checkWinVerticalTest() {
+		
+		board.setCellMark(0, mark.X);
+		board.setCellMark(1, mark.Empty);
+		board.setCellMark(2, mark.O);
+		board.setCellMark(3, mark.Empty);
+		board.setCellMark(4, mark.X);
+		board.setCellMark(5, mark.O);
+		board.setCellMark(6, mark.X);
+		board.setCellMark(7, mark.Empty);
+		board.setCellMark(8, mark.X);
+		
+
+		assertEquals(analyze.analyzeResult(), result.WIN);
+
+	}
+
+	@Test
+	void checkWinDiagonalTest() {
+//		board.cell[0].setMark(board.mark.X);
+//		board.cell[1].setMark(board.mark.O);
+//		board.cell[2].setMark(board.mark.Empty);
+//		board.cell[3].setMark(board.mark.O);
+//		board.cell[4].setMark(board.mark.X);
+//		board.cell[5].setMark(board.mark.Empty);
+//		board.cell[6].setMark(board.mark.Empty);
+//		board.cell[7].setMark(board.mark.Empty);
+//		board.cell[8].setMark(board.mark.X);
+
+		board.cell[0].setMark(board.mark.X);
+		board.cell[1].setMark(board.mark.X);
+		board.cell[2].setMark(board.mark.O);
+		board.cell[3].setMark(board.mark.Empty);
+		board.cell[4].setMark(board.mark.O);
+		board.cell[5].setMark(board.mark.Empty);
+		board.cell[6].setMark(board.mark.O);
+		board.cell[7].setMark(board.mark.X);
+		board.cell[8].setMark(board.mark.Empty);
+
+		assertEquals(analyze.analyzeResult(), result.WIN);
+
+	}
+
+}

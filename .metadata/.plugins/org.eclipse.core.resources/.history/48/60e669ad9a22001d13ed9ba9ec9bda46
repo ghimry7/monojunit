@@ -1,0 +1,32 @@
+package com.monocept.model;
+
+import java.util.Scanner;
+
+public class TicTacToeTest {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		Player[] player = new Player[2];
+		for (int i = 0; i < player.length; i++) {
+			System.out.println("Enter player " + (i+1) + " Name: ");
+			player[i]=new Player(sc.next());
+		}
+		
+		ResultType result=new ResultType(0;)
+		Board board=new Board();
+		ResultAnalyzer resultAnalyze=new ResultAnalyzer(board);
+		Game game=new Game(player,board,result);
+		
+		while(true) {
+			resultAnalyze.analyzeResult();
+			if(resultAnalyze.getResult()==)
+			System.out.println("Select Position "+game.currentPlayer.getName()+" with "+game.currentPlayer.getMark());
+			game.play(sc.nextInt()-1);
+			
+		}
+		
+		
+
+	}
+}

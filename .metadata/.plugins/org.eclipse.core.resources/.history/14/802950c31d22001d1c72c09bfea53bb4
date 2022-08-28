@@ -1,0 +1,14 @@
+package com.monocept.model;
+
+import java.awt.*;
+
+import javax.swing.JFrame;
+
+public class Addition extends JFrame{
+	public Addition() {
+		setLayout(new FlowLayout());
+		setVisible(true);
+		setSize(400, 400);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+}

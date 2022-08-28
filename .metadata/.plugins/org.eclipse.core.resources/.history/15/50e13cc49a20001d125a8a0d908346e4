@@ -1,0 +1,13 @@
+package com.monocept.model;
+
+import org.junit.jupiter.api.BeforeEach;
+
+class LineItemTest {
+
+	
+	
+	@BeforeEach
+	void createObj() {
+		
+	}
+}

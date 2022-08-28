@@ -1,0 +1,67 @@
+package com.monocept.model;
+
+import java.awt.FlowLayout;
+
+import javax.swing.*;
+
+
+public class JRadioClass extends JFrame {
+	
+	public JRadioClass() {
+		JRadioMethod();
+		setLayout(new FlowLayout());
+		setVisible(true);
+		setSize(400, 400);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	public void JRadioMethod() {
+		
+		JRadioButton r1=new JRadioButton("Male");
+		JRadioButton r2=new JRadioButton("Female");
+		
+		JCheckBox cb1=new JCheckBox("Dancing");
+		JCheckBox cb2=new JCheckBox("Singing");
+		
+		JButton b=new JButton("Submit");
+		
+		b.addActionListener(e->{
+			if(r1.isSelected()) {
+				System.out.println(r1.getText());
+			}
+			else if(r2.isSelected()) {
+				System.out.println(r2.getText());
+			}
+			
+			if(cb1.isSelected()&&cb2.isSelected()) {
+				System.out.println(cb1.getText());
+			}
+			if(cb1.isSelected()){
+				System.out.println(cb1.getText());
+			}
+			
+		});
+		
+		
+	
+		
+		
+		
+		add(r1);
+		add(r2);
+		
+		add(cb1);
+		add(cb2);
+		
+		add(b);
+		
+		ButtonGroup bg=new ButtonGroup();
+		bg.add(r1);
+		bg.add(r2);
+		
+		
+		
+		
+		
+	}
+}

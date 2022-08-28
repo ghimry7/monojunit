@@ -1,0 +1,12 @@
+package com.monocept.model;
+
+public class JRadioClass {
+	
+	public JRadioClass() {
+		
+		setLayout(new FlowLayout());
+		setVisible(true);
+		setSize(400, 400);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+}

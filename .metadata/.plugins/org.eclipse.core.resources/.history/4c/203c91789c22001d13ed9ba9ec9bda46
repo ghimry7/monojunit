@@ -1,0 +1,38 @@
+package com.monocept.model;
+
+public class Game {
+	Player currentPlayer;
+	Player[] players;
+	Board board;
+	ResultAnalyzer analyzer;
+	ResultType result = ResultType.PROGRESS;
+	MarkType mark;
+
+	public Game(Player[] players, Board board, ResultAnalyzer analyzer) {
+		this.players = players;
+		this.board = board;
+		this.analyzer = analyzer;
+		currentPlayer = this.players[0];
+		this.players[0].setMark(mark.X);
+		this.players[1].setMark(mark.O);
+	}
+
+	public void play(int loc) {
+		board.setCellMark(loc, currentPlayer.getMark());
+		if(analyzer.analyzeResult()=result.WIN) {
+		switchCurrentPlayer();
+		}
+	}
+
+	private void switchCurrentPlayer() {
+		if (currentPlayer.equals(players[0])) {
+			currentPlayer = players[1];
+		} else {
+			currentPlayer = players[0];
+		}
+	}
+
+	public Player getCurrentPlayer() {
+		return currentPlayer;
+	}
+}

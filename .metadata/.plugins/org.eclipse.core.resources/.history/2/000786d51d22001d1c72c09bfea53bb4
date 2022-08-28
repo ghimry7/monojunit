@@ -1,0 +1,21 @@
+package com.monocept.model;
+
+import java.awt.FlowLayout;
+
+import javax.swing.*;
+
+
+public class Addition extends JFrame{
+	public Addition() {
+		setLayout(new FlowLayout());
+		setVisible(true);
+		setSize(400, 400);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	public void cal() {
+		JTextField t1=new JTextField();
+		JTextField t2=new JTextField();
+		JLabel l1=new JLabel("Result");
+	}
+}
